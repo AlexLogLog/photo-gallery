@@ -14,7 +14,7 @@ function Photos(props) {
     if (photos === null) {
         return (
             <>
-                {history.push('/')}
+                {history.push('/photo-gallery')}
             </>
         )
     } else if (photos.length === 0) {

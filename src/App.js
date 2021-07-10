@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import Header from './componets/Header/Header';
 import Gallery from './componets/Gallery/Gallery';
@@ -78,8 +78,8 @@ function App() {
         id: id
       });
     } else {
-      const nextPhotoId = photosInAlbum.filter((photo) => popupPhoto.id + 1 === photo.id);
-      const { url, title, id } = nextPhotoId[0]
+      const nextPhotoId = photosInAlbum.find((photo) => popupPhoto.id + 1 === photo.id);
+      const { url, title, id } = nextPhotoId;
       setPopupPhoto({
         open: true,
         link: url,
@@ -92,8 +92,8 @@ function App() {
 
   function handleExtFhoto() {
     if (popupPhoto.id === photosInAlbum[0].id) {
-      const extPhotoId = photosInAlbum.filter((photo) => photo.id === photosInAlbum[photosInAlbum.length - 1].id)
-      const { url, title, id } = extPhotoId[0]
+      const extPhotoId = photosInAlbum.find((photo) => photo.id === photosInAlbum[photosInAlbum.length - 1].id)
+      const { url, title, id } = extPhotoId;
       setPopupPhoto({
         open: true,
         link: url,
@@ -101,8 +101,8 @@ function App() {
         id: id
       });
     } else {
-      const nextPhotoId = photosInAlbum.filter((photo) => popupPhoto.id - 1 === photo.id);
-      const { url, title, id } = nextPhotoId[0]
+      const nextPhotoId = photosInAlbum.find((photo) => popupPhoto.id - 1 === photo.id);
+      const { url, title, id } = nextPhotoId;
       setPopupPhoto({
         open: true,
         link: url,
@@ -116,12 +116,15 @@ function App() {
   return (
     <div className="root">
       <Header />
-      <Route exact path='/photo-gallery'>
-        {loader && <Gallery users={users} albums={albums} photos={photos} buttonOpenAlbum={handleAlbumClick} />}
-      </Route>
-      <Route path='/photo-gallery/photos'>
-        <Photos photos={photosInAlbum} photoClick={handlePhotoClick} albumName={albumName}></Photos>
-      </Route>
+      <Switch>
+        <Route exact path='/photo-gallery'>
+          {loader && <Gallery users={users} albums={albums} photos={photos} buttonOpenAlbum={handleAlbumClick} />}
+        </Route>
+        <Route path='/photo-gallery/photos'>
+          <Photos photos={photosInAlbum} photoClick={handlePhotoClick} albumName={albumName}></Photos>
+        </Route>
+      </Switch>
+
       <PhotoPopup
         next={handleNextFhoto}
         ext={handleExtFhoto}
