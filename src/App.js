@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import Header from './componets/Header/Header';
 import Gallery from './componets/Gallery/Gallery';
@@ -44,7 +44,6 @@ function App() {
 
   }, []
   )
-
   function handleAlbumClick(album) {
     setAlbumName(album.title)
     setPhotosInAlbum(photos.filter((photosMy) => photosMy.albumId === album.id))
@@ -117,10 +116,10 @@ function App() {
   return (
     <div className="root">
       <Header />
-      <Route path='/' exact>
+      <Route exact path='/photo-gallery'>
         {loader && <Gallery users={users} albums={albums} photos={photos} buttonOpenAlbum={handleAlbumClick} />}
       </Route>
-      <Route path='/photos'>
+      <Route path='/photo-gallery/photos'>
         <Photos photos={photosInAlbum} photoClick={handlePhotoClick} albumName={albumName}></Photos>
       </Route>
       <PhotoPopup
@@ -131,6 +130,8 @@ function App() {
         link={popupPhoto.link}
         onClose={handleClosePopup}
       />
+      <Route render={() => <Redirect to={{ pathname: "/photo-gallery" }} />} />
+
     </div>
   );
 }

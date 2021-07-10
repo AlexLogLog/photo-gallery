@@ -19,7 +19,7 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build"
   },
-  "homepage" : "http://alexloglog.github.io/photo-gallery",
+  "homepage" : "http://alexloglog.github.io/photo-gallery/",
     "eslintConfig": {
     "extends": [
       "react-app",

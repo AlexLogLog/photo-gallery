@@ -10,7 +10,7 @@ function Album(props) {
     const history = useHistory();
     function openAlbum() {
         buttonOpenAlbum(album);
-        history.push('/photos')
+        history.push('/photo-gallery/photos')
         window.scrollTo(0, 0);
 
     }

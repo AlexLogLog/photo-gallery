@@ -21,7 +21,7 @@ function Photos(props) {
         return (
             <div className='photos'>
                 <div className='photos__go-back'>
-                    <Link to='/' className='photos__go-back'>&#8592; Go back to the main page</Link>
+                    <Link to='/photo-gallery' className='photos__go-back'>&#8592; Go back to the main page</Link>
                 </div>
                 <p className='photos__name-album'> No fhotos in album "{albumName}"</p>
             </div>
@@ -30,7 +30,7 @@ function Photos(props) {
         return (
             <div className='photos'>
                 <div className='photos__go-back'>
-                    <Link to='/' className='photos__go-back'>&#8592; Go back to the main page</Link>
+                    <Link to='/photo-gallery' className='photos__go-back'>&#8592; Go back to the main page</Link>
                 </div>
                 <p className='photos__name-album'> Fhotos in album "{albumName}"</p>
                 <div className="photos__block">
