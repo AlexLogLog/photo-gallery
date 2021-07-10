@@ -1,0 +1,11 @@
+.albums {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 50px;
+    border-bottom: 1px solid black;
+    
+}

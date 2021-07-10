@@ -1,0 +1,37 @@
+.photos__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 50px 0;
+}
+
+.photos {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.photos__go-back {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: right;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration:none;
+}
+
+.photos__name-album {
+    margin: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+    padding-top: 30px;
+}

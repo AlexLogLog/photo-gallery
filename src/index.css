@@ -1,0 +1,11 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/root.css);
+
+@import url(./componets/Header/Header.css);
+@import url(./componets/Gallery/Gallery.css);
+@import url(./componets/Albums/Albums.css);
+@import url(./componets/Album/Album.css);
+@import url(./componets/Photo/Photo.css);
+@import url(./componets/Photos/Photos.css);
+
+@import url(./componets/PhotoPopup/PhotoPopup.css);
